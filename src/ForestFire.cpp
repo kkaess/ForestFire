@@ -32,19 +32,6 @@ int main(int argc, char ** argv) {
 	bool terminate_on_n = true; //Terminate when n is reached
 
 	//Populate command-line args
-	// TODONE move this to a class, so it doesn't recompile every time
-	// ---- because it adds ~6s to compile time
-//	options_description desc("Options");
-//	desc.add_options()("help,h", "print this help message")("length,L",
-//			value<int>(&L)->default_value(1000),
-//			"length of side in square grid")("err,e",
-//			value<double>(&err)->default_value(0.05),
-//			"goal fractional error on mean.  If not specified, ForestFire will iterate a constant (n) number of times. If n is also specified, ForestFire will satisfy both. Must be positive.")(
-//			"n,n", value<int>(&n)->default_value(5),
-//			"number of iterations to run. If err is also specified, ForestFire will satisfy both. ForestFire will always iterate at least once.");
-//	variables_map vm;
-//	store(po::parse_command_line(argc, argv, desc), vm);
-//	notify(vm);
 	ForestFireOpts ffo(argc, (const char**) argv);
 	//If we called the program with --help, print options and quit.
 	if (ffo.count("help")) {
